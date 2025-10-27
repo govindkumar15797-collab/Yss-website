@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>युवा साथी संगठन | YSS</title>
+<style>
+  /* ---------- Base ---------- */
+  :root{
+    --bg:#0b0b0c;
+    --card:#0f1113;
+    --accent1:#ff6b2f; /* orange-red */
+    --accent2:#00c17a; /* green */
+    --muted:#a8b0b6;
+    --glass: rgba(255,255,255,0.04);
+    --glow: 0 6px 20px rgba(255,107,47,0.12);
+    --maxw:1100px;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", "Helvetica Neue", Arial;
+    background: radial-gradient(1200px 400px at 10% 10%, rgba(255,107,47,0.06), transparent),
+                radial-gradient(900px 300px at 90% 90%, rgba(0,193,122,0.03), transparent),
+                var(--bg);
+    color:#e6eef3;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    line-height:1.5;
+  }
+
+  /* ---------- Container ---------- */
+  .wrap{max-width:var(--maxw); margin:40px auto; padding:20px;}
+
+/* ---------- Header / Nav ---------- */
+  header{
+    position:sticky; top:12px; z-index:50; backdrop-filter: blur(6px);
+    background: linear-gradient(90deg, rgba(255,107,47,0.06), rgba(0,193,122,0.03));
+    border-radius:14px; padding:10px 14px; box-shadow: var(--glow);
+    display:flex; align-items:center; justify-content:space-between; gap:12px;
+  }
+  .brand{display:flex; align-items:center; gap:12px;}
+  .brand img{height:56px; width:56px; object-fit:contain; border-radius:10px; box-shadow: 0 6px 18px rgba(0,0,0,0.6);}
+  .brand h1{font-size:1.05rem; margin:0; color:#fff; letter-spacing:0.6px}
+  .brand p{margin:0; font-size:0.78rem; color:var(--muted)}
+
+  nav{display:flex; gap:14px; align-items:center;}
+  nav a{
+    color:var(--muted); text-decoration:none; font-weight:600; font-size:0.95rem;
+    padding:8px 12px; border-radius:10px;
+  }
+  nav a:hover{color:#fff; background:linear-gradient(90deg, rgba(255,107,47,0.08), rgba(0,193,122,0.06)); transform:translateY(-2px);}
+
+  .cta{
+    display:inline-flex; align-items:center; gap:10px; background: linear-gradient(90deg,var(--accent1), #e02f2f);
+    color:#fff; padding:8px 14px; border-radius:22px; text-decoration:none; font-weight:700;
+    box-shadow: 0 6px 20px rgba(224,47,47,0.18);
+  }
+  .cta small{font-weight:600; opacity:0.95}
+
+/* ---------- Hero ---------- */
+  .hero{
+    margin-top:28px;
+    background:
+      linear-gradient(180deg, rgba(255,107,47,0.06), rgba(0,0,0,0.15)),
+      linear-gradient(180deg, rgba(0,0,0,0.12), rgba(0,0,0,0.25));
+    border-radius:14px; padding:36px; display:grid; grid-template-columns: 1fr 380px; gap:24px;
+    align-items:center; box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+  }
+  .hero-left h2{font-size:2rem; color:var(--accent1); margin:0 0 10px}
+  .hero-left h3{margin:0 0 14px; color:#fff; font-size:1.15rem}
+  .tag{display:inline-block; padding:8px 12px; background: linear-gradient(90deg,#111, rgba(255,255,255,0.02)); border-radius:999px; color:var(--muted); font-weight:700; margin-bottom:14px}
+  .hero-p{color:var(--muted); margin-bottom:18px}
+  .hero-actions{display:flex; gap:12px; flex-wrap:wrap}
+  .btn{
+    padding:10px 16px; border-radius:12px; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:10px;
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+  .btn-join{background:linear-gradient(90deg,var(--accent2), #00a66a); color:#06120b; box-shadow: 0 10px 30px rgba(0,193,122,0.12);}
+  .btn-join:hover{transform:translateY(-4px); box-shadow: 0 18px 40px rgba(0,193,122,0.16)}
+  .btn-learn{background:transparent; color:var(--muted); border:1px solid rgba(255,255,255,0.04)}
+  .hero-meta{display:flex; gap:18px; margin-top:12px; color:var(--muted); font-size:0.95rem}
+
+/* hero-right card */
+  .card{
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border-radius:12px; padding:18px; text-align:center; box-shadow: 0 8px 30px rgba(0,0,0,0.6); border:1px solid rgba(255,255,255,0.03)
+  }
+  .logo-lg{height:120px; width:120px; object-fit:contain; margin:auto; border-radius:8px; background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent); padding:8px}
+  .phone{margin-top:12px; font-weight:800; color:#fff}
+  .join-small{display:block; margin-top:8px; font-size:0.9rem; color:var(--muted)}
+
+/* ---------- Sections ---------- */
+  section.content{margin-top:28px; display:grid; grid-template-columns: 1fr 1fr; gap:24px;}
+  .panel{background:var(--card); padding:20px; border-radius:12px; border:1px solid rgba(255,255,255,0.02); box-shadow: 0 8px 30px rgba(0,0,0,0.6)}
+  h3{margin:0 0 10px; color:var(--accent1)}
+  p{color:var(--muted); margin-bottom:12px; font-size:0.95rem}
+
+/* objectives list */
+  .objectives ul{list-style: none; padding-left:0}
+  .objectives li{position:relative; padding-left:36px; margin-bottom:12px; color:var(--muted)}
+  .objectives li::before{
+    content:""; position:absolute; left:0; top:6px; width:18px; height:18px; border-radius:50%;
+    background: linear-gradient(90deg,var(--accent1), var(--accent2));
+    box-shadow:0 6px 18px rgba(255,107,47,0.12);
+  }
+
+/* membership */
+  .membership-grid{display:grid; gap:12px}
+  .plan{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02)); padding:14px; border-radius:10px; border-left:4px solid rgba(255,107,47,0.9)}
+  .plan h4{margin:0 0 6px}
+  .qr{display:flex; gap:12px; align-items:center; justify-content:center; flex-direction:column}
+  .qr img{max-width:220px; border-radius:8px; box-shadow: 0 10px 30px rgba(0,0,0,0.6);}
+
+/* contact / social */
+  .contact .info{color:var(--muted); font-weight:700}
+  .socials{display:flex; gap:10px; margin-top:10px; flex-wrap:wrap}
+  .social{padding:10px 12px; border-radius:10px; text-decoration:none; color:#fff; font-weight:700; display:inline-flex; gap:8px; align-items:center}
+  .social.fb{background:#1877f2}
+  .social.ig{background:#e1306c}
+  .social.wh{background:linear-gradient(90deg,#25D366,#128C7E); color:#06120b}
+  .social:hover{transform:translateY(-4px)}
+
+/* footer */
+  footer{margin-top:28px; text-align:center; color:var(--muted); font-size:0.9rem; padding:22px 10px}
+
+/* ---------- Reveal animation ---------- */
+  .reveal{opacity:0; transform:translateY(18px) scale(.995); transition: all 700ms cubic-bezier(.2,.9,.3,1); will-change:transform,opacity}
+  .reveal.visible{opacity:1; transform:translateY(0) scale(1)}
+
+/* ---------- Responsive ---------- */
+  @media (max-width:980px){
+    .hero{grid-template-columns:1fr 320px}
+    section.content{grid-template-columns:1fr; margin-top:20px}
+  }
+  @media (max-width:640px){
+    .wrap{padding:12px}
+    header{padding:10px}
+    nav{display:none}
+    .hero{grid-template-columns:1fr; padding:22px}
+    .logo-lg{height:96px;width:96px}
+    .brand img{height:46px}
+    .hero-left h2{font-size:1.5rem}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- Header -->
+  <header>
+    <div class="brand">
+      <img src="YSS Logo (1).png" alt="YSS Logo">
+      <div>
+        <h1>युवा साथी संगठन</h1>
+        <p>युवा का साथ • विकास की बात</p>
+      </div>
+    </div>
+
+    <nav aria-label="Main navigation">
+      <a href="#about">परिचय</a>
+      <a href="#objectives">उद्देश्य</a>
+      <a href="#membership">सदस्यता</a>
+      <a href="#contact">संपर्क</a>
+    </nav>
+
+    <a class="cta" href="https://wa.me/919560582016" target="_blank" rel="noopener">
+      <small>Join</small> <span>WhatsApp</span>
+    </a>
+  </header>
+
+  <!-- Hero -->
+  <main class="hero" role="main">
+    <div class="hero-left">
+      <span class="tag">नयी सोच • नया संकल्प</span>
+      <h2 class="reveal">युवा साथी संगठन <small style="display:block;font-size:0.6em;color:var(--muted)">Yuva Sathi Sangathan</small></h2>
+      <h3 class="reveal" style="margin-top:10px;">“युवा का साथ, विकास की बात”</h3>
+      <p class="hero-p reveal">हम युवाओं को सशक्त बनाकर शिक्षा, कौशल और समाज सेवा के माध्यम से सकारात्मक परिवर्तन लाते हैं। आइए साथ मिलकर गांव-शहर में बदलाव करें।</p>
+
+      <div class="hero-actions reveal">
+        <a class="btn btn-join" href="https://wa.me/919560582016" target="_blank" rel="noopener">
+          ➤ Join Now
+        </a>
+        <a class="btn btn-learn" href="#membership">सदस्यता देखें</a>
+      </div>
+
+      <div class="hero-meta reveal">
+        <div>📍 ग्राम कटोली, तहसील चोरहा, जिला बबेरू</div>
+        <div>📞 9560582016</div>
+      </div>
+    </div>
+
+    <aside class="card reveal" aria-label="Membership card">
+      <div class="logo-lg">
+        <img src="YSS Logo (1).png" alt="YSS Logo Large" style="height:100%; width:100%; object-fit:contain;">
+      </div>
+      <div class="phone">9560582016</div>
+      <div class="join-small">WhatsApp पर जुड़ें — तुरंत संवाद</div>
+    </aside>
+  </main>
+
+  <!-- content sections -->
+  <section class="content">
+
+    <!-- About -->
+    <div class="panel about reveal" id="about">
+      <h3>हमारा परिचय</h3>
+      <p>“युवा साथी संगठन” का उद्देश्य युवाओं में आत्मनिर्भरता, जिम्मेदारी और समाजसेवा की भावना को विकसित करना है। हम शिक्षा, कौशल विकास, पर्यावरण संरक्षण और सामाजिक जागरूकता के माध्यम से सकारात्मक परिवर्तन करते हैं।</p>
+
+      <p style="font-weight:700;color:var(--muted)">मूल बातें:</p>
+      <ul style="color:var(--muted); margin-top:8px;">
+        <li>स्थानीय स्तर पर रोजगार और प्रशिक्षण का आयोजन</li>
+        <li>स्वास्थ्य व स्वच्छता अभियानों का संचालन</li>
+        <li>नशा व कुरीतियों के विरुद्ध जागरूकता</li>
+      </ul>
+    </div>
+
+    <!-- Objectives -->
+    <div class="panel objectives reveal" id="objectives">
+      <h3>मुख्य उद्देश्य</h3>
+      <ul>
+        <li>युवाओं में आत्मनिर्भरता और जिम्मेदारी की भावना विकसित करना।</li>
+        <li>शिक्षा का प्रसार और कौशल विकास द्वारा रोजगार के अवसर बढ़ाना।</li>
+        <li>सामाजिक कुरीतियों, नशाखोरी और भेदभाव के विरुद्ध जागरूकता फैलाना।</li>
+        <li>स्वास्थ्य, स्वच्छता और पर्यावरण संरक्षण के लिए अभियान चलाना।</li>
+        <li>भाईचारा व राष्ट्रीय एकता को मजबूत करना।</li>
+      </ul>
+    </div>
+
+    <!-- Membership -->
+    <div class="panel membership reveal" id="membership">
+      <h3>सदस्यता प्रक्रिया</h3>
+      <div class="membership-grid">
+        <div class="plan">
+          <h4>पूर्णकालिक सदस्य (Lifetime)</h4>
+          <p>एक बार ₹1000 भुगतान कर के पूर्णकालिक सदस्य बनें।</p>
+        </div>
+        <div class="plan">
+          <h4>सामान्य सदस्य (General)</h4>
+          <p>₹100 प्रति वर्ष सदस्यता शुल्क।</p>
+        </div>
+        <div class="plan">
+          <h4>विशेष सदस्य (Special)</h4>
+          <p>विशेष कार्य या योगदान के आधार पर विशेष सदस्यता प्रदान की जाती है।</p>
+        </div>
+
+        <div class="qr" style="grid-column:1 / -1; margin-top:6px">
+          <p style="color:var(--muted); font-weight:700; margin-bottom:8px">भुगतान के लिए UPI / QR</p>
+          <img src="YSS _membership.png" alt="YSS Membership QR">
+          <small style="color:var(--muted)">UPI: 885991757958@ybl</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact -->
+    <div class="panel contact reveal" id="contact">
+      <h3>संपर्क एवं फॉलो करें</h3>
+      <p class="info">9560582016 • yuvasathi.sangathan@gmail.com</p>
+
+      <div class="socials" aria-hidden="false" role="navigation" style="margin-top:10px">
+        <a class="social fb" href="https://www.facebook.com/share/19spmKze2x/" target="_blank" rel="noopener">
+          Facebook
+        </a>
+        <a class="social ig" href="https://www.instagram.com/yuvasathi.sangathan" target="_blank" rel="noopener">
+          Instagram
+        </a>
+        <a class="social wh" href="https://wa.me/919560582016" target="_blank" rel="noopener">
+          WhatsApp
+        </a>
+      </div>
+
+      <div style="margin-top:14px; color:var(--muted); font-size:0.95rem">
+        <strong>ठिकाना:</strong> गाँव कटोली, पोस्ट पुरसवाँ, तहसील चोरहा, जिला बबेरू — 243639
+      </div>
+    </div>
+
+  </section>
+
+  <footer class="reveal" style="margin-top:28px">
+    © <span id="yr"></span> युवा साथी संगठन • सारे अधिकार सुरक्षित
+  </footer>
+
+</div>
+
+<script>
+  // set year
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // smooth scroll for internal links
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click', function(e){
+      const target = document.querySelector(this.getAttribute('href'));
+      if(target){
+        e.preventDefault();
+        target.scrollIntoView({behavior:'smooth', block:'start'});
+      }
+    });
+  });
+
+  // simple scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.12});
+  revealEls.forEach(el => io.observe(el));
+
+  // small floating subtle parallax on hero background based on mouse (desktop)
+  const hero = document.querySelector('.hero');
+  if(hero){
+    window.addEventListener('mousemove', e=>{
+      const x = (e.clientX / window.innerWidth) - 0.5;
+      const y = (e.clientY / window.innerHeight) - 0.5;
+      hero.style.transform = `translate3d(${x*6}px, ${y*6}px, 0)`;
+    });
+    // reset on leave
+    hero.addEventListener('mouseleave', ()=> hero.style.transform = 'translate3d(0,0,0)');
+  }
+</script>
+
+</body>
+</html>
