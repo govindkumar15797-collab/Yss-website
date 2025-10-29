@@ -85,18 +85,85 @@
 </head>
 
 <body>
-  <header>
-    <h1>Yuva Sathi Sangathan</h1>
-  </header>
+<!--  Universal Navbar: use in ALL pages -->
+<header>
+  <h1>Yuva Sathi Sangathan</h1>
+</header>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="join.html">Join</a>
-    <a href="executive.html">Executive</a>
-    <a href="members.html">Members</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+<nav class="navbar">
+  <div class="menu-icon" onclick="toggleMenu()"></div>
+  <div class="nav-links" id="navLinks">
+    <a href="/index.html">Home</a>
+    <a href="/about.html">About</a>
+    <a href="/join.html">Join</a>
+    <a href="/executive.html">Executive</a>
+    <a href="/members.html">Members</a>
+    <a href="/contact.html">Contact</a>
+  </div>
+</nav>
+
+<script>
+  function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("show");
+  }
+</script>
+
+<style>
+  .navbar {
+    background: #1a1a1a;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+  }
+
+  .navbar a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 12px;
+    font-weight: 500;
+    transition: color 0.3s;
+    display: inline-block;
+  }
+
+  .navbar a:hover {
+    color: #ff512f;
+  }
+
+  .menu-icon {
+    display: none;
+    font-size: 28px;
+    color: #fff;
+    cursor: pointer;
+    position: absolute;
+    left: 15px;
+    top: 10px;
+  }
+
+  @media (max-width: 768px) {
+    .menu-icon {
+      display: block;
+    }
+
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      background: #111;
+      padding: 15px 0;
+      border-top: 1px solid #333;
+    }
+
+    .nav-links.show {
+      display: flex;
+    }
+
+    .nav-links a {
+      padding: 10px 0;
+      margin: 0;
+      border-bottom: 1px solid #222;
+    }
+  }
+</style>
+
 
   <div class="container">
     <h2>Join Yuva Sathi Sangathan</h2>
