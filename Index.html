@@ -160,21 +160,26 @@
     </div>
 <!-- ✅ Universal Navbar: use in ALL pages -->
 <nav class="navbar">
-  <div class="menu-icon" onclick="toggleMenu()">☰</div>
-  <div class="nav-links" id="navLinks">
-    <a href="/index.html">Home</a>
-    <a href="/about.html">About</a>
-    <a href="/join.html">Join</a>
-    <a href="/executive.html">Executive</a>
-    <a href="/members.html">Members</a>
-    <a href="/contact.html">Contact</a>
+  <div class="logo">Yuva Sathi Sangathan</div>
+  <div class="menu-toggle" id="mobile-menu">
+    ☰
   </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="join.html">Join</a></li>
+    <li><a href="executive.html">Executive</a></li>
+    <li><a href="members.html">Members</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
 </nav>
 
 <script>
-  function toggleMenu() {
-    document.getElementById("navLinks").classList.toggle("show");
-  }
+  const menu = document.querySelector('#mobile-menu');
+  const navLinks = document.querySelector('.nav-links');
+  menu.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
 </script>
 
 <style>
