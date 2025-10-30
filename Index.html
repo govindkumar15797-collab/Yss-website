@@ -146,52 +146,28 @@
 </style>
 </head>
 <body>
-<nav class="navbar">
-  <div class="logo">Yuva Sathi Sangathan</div>
-  <button class="menu-toggle" id="menu-toggle">☰</button>
-  <ul class="nav-links" id="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="join.html">Join</a></li>
-    <li><a href="executive.html">Executive</a></li>
-    <li><a href="members.html">Members</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
-
-<div class="wrap">
-
-  <!-- Header -->
-  <header>
-    <div class="brand">
-      <img src="YSS Logo (1).png" alt="YSS Logo">
-      <div>
-        <h1>युवा साथी संगठन</h1>
-        <p>युवा का साथ • विकास की बात</p>
-      </div>
-    </div>
 <!-- ✅ Universal Navbar: use in ALL pages -->
+<header>
+  <h1>Yuva Sathi Sangathan</h1>
+</header>
+
 <nav class="navbar">
-  <div class="logo">Yuva Sathi Sangathan</div>
-  <div class="menu-toggle" id="mobile-menu">☰</div>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="join.html">Join</a></li>
-    <li><a href="executive.html">Executive</a></li>
-    <li><a href="members.html">Members</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
+  <div class="menu-icon" onclick="toggleMenu()">☰</div>
+  <div class="nav-links" id="navLinks">
+    <a href="/index.html">Home</a>
+    <a href="/about.html">About</a>
+    <a href="/join.html">Join</a>
+    <a href="/executive.html">Executive</a>
+    <a href="/members.html">Members</a>
+    <a href="/contact.html">Contact</a>
+  </div>
 </nav>
 
 <script>
-  const menu = document.querySelector('#mobile-menu');
-  const navLinks = document.querySelector('.nav-links');
-  menu.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-  });
+  function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("show");
+  }
 </script>
-
 
 <style>
   .navbar {
@@ -248,6 +224,7 @@
     }
   }
 </style>
+
  </header>
 <!-- Hero -->
   <main class="hero" role="main">
@@ -341,22 +318,7 @@
         </a>
       </div>
 
-      <div style="margin-top:14px; color:var(--muted); font-size:0.95rem">
-        <strong>कार्यलय</strong> ग्राम कठौली पुसगवॉ चौराहा पोस्ट पुसगवॉ तहसील व जिला बदायूँ 243639
-      </div>
-    </div>
-
-  </section>
-<script>
-  const toggle = document.getElementById('menu-toggle');
-  const links = document.getElementById('nav-links');
-
-  toggle.addEventListener('click', () => {
-    links.classList.toggle('active');
-  });
-</script>
-
-  <footer class="reveal" style="margin-top:28px">
+    <footer class="reveal" style="margin-top:28px">
     © <span id="yr"></span> युवा साथी संगठन • सारे अधिकार सुरक्षित
   </footer>
 
