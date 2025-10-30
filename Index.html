@@ -146,6 +146,18 @@
 </style>
 </head>
 <body>
+<nav class="navbar">
+  <div class="logo">Yuva Sathi Sangathan</div>
+  <button class="menu-toggle" id="menu-toggle">☰</button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="join.html">Join</a></li>
+    <li><a href="executive.html">Executive</a></li>
+    <li><a href="members.html">Members</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
 
 <div class="wrap">
 
@@ -335,6 +347,14 @@
     </div>
 
   </section>
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const links = document.getElementById('nav-links');
+
+  toggle.addEventListener('click', () => {
+    links.classList.toggle('active');
+  });
+</script>
 
   <footer class="reveal" style="margin-top:28px">
     © <span id="yr"></span> युवा साथी संगठन • सारे अधिकार सुरक्षित
